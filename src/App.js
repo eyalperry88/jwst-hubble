@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
+
+import hubble from "./hubble.webp";
+import jwst from "./jwst.webp";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactCompareSlider
+        itemOne={
+          <ReactCompareSliderImage
+            src={hubble}
+            alt="Hubble"
+          />
+        }
+        itemTwo={
+          <ReactCompareSliderImage
+            src={jwst}
+            alt="JWST"
+          />
+        }
+        onlyHandleDraggable
+      />
     </div>
   );
 }
